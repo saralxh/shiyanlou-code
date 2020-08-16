@@ -21,6 +21,15 @@ adb logcat -v time> 目标文件.txt //输出的日志没有线程号。设置�
 
 分享txt文档，notpad查看log信息
 
+# adb logcat 无线
+
+adb connect IP地址  返回 connected IP地址:5555
+
+adb logcat -G 200M
+
+adb logcat > log文件路径
+
+
 # adb logcat -b all截取
 adb shell setprop.logd.size 25M
 
