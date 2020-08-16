@@ -39,7 +39,7 @@ adb shell dmesg -c   清除旧的
 
 adb shell dmesg -w > 目标文件.txt //查看warning级别的log
 
-#怎样抓取完整的开机过程dmesg log
+# 怎样抓取完整的开机过程dmesg log
 
 注意，必须确保抓dmesg log的命令在设备重启完毕前输入。也可以两个命令在notepad++等文本编辑工具中写好了，一起复制到cmd窗口中
 
