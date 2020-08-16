@@ -1,0 +1,69 @@
+
+
+
+1. 获取log  
+
+windows cmd 终端:  进入 android 终端:
+
+adb root
+adb shell
+
+#######  确定 中间是否需要进行 其他操作
+
+cd /map
+setprop persist.logd.size 200M
+touch /data/default.key
+logcat -f log.txt &
+logcat -b all -f ballLog1.txt &
+dmesg -Tw > dmesgtail &
+top -b -n 5 > top5
+dumpsys meminfo > dumpsysmeminfo
+dumpsys SurfaceFlinger > dumpsysSurfaceFlinger
+dumpsys procstats –a > dumpsysprocstatsALL
+dumpsys cpuinfo > dumpsysCPUinfo
+dumpsys > ALLdumpsys
+procrank >procrank
+cp /proc/meminfo ./
+
+
+
+#  2. 得到log 下载log
+ 在 windows cmd 终端执行：
+ 
+adb pull /map C:\Users\zhh8023\Desktop\1
+adb pull /data/anr C:\Users\zhh8023\Desktop\1
+adb pull /data/tombstones/ C:\Users\zhh8023\Desktop\1
+adb pull /data/ vstgloballogcontrol/ C:\Users\zhh8023\Desktop\1
+
+
+
+
+
+#  请注意 最后 问题 Issue 1 : Screen Freeze / Blank 中的 操作
+
+1.On QNX Terminal:  
+   Step 1 : Ping IVI and note output 
+操作：
+ ping 192.168.1.2  
+     
+2.Step 2 : Run gles2-gears_screen tool  操作：
+ gles2-gears_screen –display=2 
+    
+Observation:  Check IVI screen for Moving gears  
+   
+3.Step 3:  Press ‘f’ after step 2 and Note output (frame rate) 
+f
+
+#请注意 Cluster Screen Freeze/Blank 的log截取操作：
+
+1.Step 1 : Kill ClusterHMI 
+    $slay ClusterHMI.exe  
+    After this command you will see IVI screen get mirror here  
+2.Step 2 : check openwfd_telltale and observer telltale indication on screen  
+ $  openwfd_telltale 
+3.Step 3 : Run gles2-gears_screen tool  
+    $ gles2-gears_screen –display=1 
+    Observation:  Check Cluster screen for Moving gears  
+   Step 4:  Press ‘f’ after step 3 and Note output (frame rate)  
+ 
+

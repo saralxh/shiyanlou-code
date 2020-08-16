@@ -1,0 +1,36 @@
+
+# 2.0 准备工作：
+
+执行此步骤之前需要先执行 1. 1.xshell执行_创造log环境
+
+然后复现 bug
+
+
+#  2.1 第一步  在 xshell终端执行:  复制 黏贴 到 窗口 ，等待执行 完成  输入 回车 确保最后一句也执行
+sync
+umount /var/log
+
+
+#  2.2 第二步  在 android 终端执行: 复制 黏贴 到 窗口 ，等待执行 完成  输入 回车 确保最后一句也执行
+
+先 windows cmd终端输入:    adb shell  进入 android 终端 
+
+然后在 android 终端  执行:
+
+umount /ota_download
+mount -t vfat /dev/block/vdi /ota_download
+sync
+
+
+# 2.3 第三布  在 windows cmd终端 执行：复制 黏贴 到 窗口 ，等待执行 完成  输入 回车 确保最后一句也执行
+
+如果还在android 终端内，需要先退出android 终端环境
+在 android 终端 内 执行: exit    退出 android 终端
+
+后再 windows cmd终端 执行： 获取android 终端生成的log
+
+adb pull /ota_download/QNXlogs    
+
+log会下载到 windows cmd终端 所在的目录下(终端提示符 > 前的地址)
+
+

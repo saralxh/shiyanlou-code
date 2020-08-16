@@ -1,0 +1,58 @@
+
+# 1.0 准备工作：
+
+执行此步骤之前需要确保 android端的 /dev/disk/ota_download 存在
+xshell 查看文件是否存在:
+xshell终端:   ls /dev/disk/ota_download
+如果有返回信息，则ota_download已经在 android端。
+
+
+如果没有返回信息，则需要将  ota_download  从电脑上 push  到android端的 /dev/disk/ 处
+windows  cmd 终端:  adb push ota_download /dev/disk/
+
+①adb push C:\Users\zhh8023\Desktop\LogsScript_V2\LogsScript_V2\QNXScript.sh /ota_download/QNXScript.sh
+②adb push C:\Users\zhh8023\Desktop\LogsScript_V2\LogsScript_V2\QNX_Slogs.sh /ota_download/QNX_Slogs.sh
+③adb push C:\Users\zhh8023\Desktop\LogsScript_V2\LogsScript_V2\AndroidTarget.sh /ota_download/Monitor.sh
+
+#  1.1 第一步  在 xshell终端执行:  复制 黏贴 到 窗口 ，等待执行 完成  输入 回车 确保最后一句也执行
+mount -t dos /dev/disk/ota_download /var/log
+mkdir /var/log/QNXlogs
+cd /var/log/QNXlogs
+
+
+
+
+########
+  确定 第一步和第二步中间 是否需要进行其他 操作
+########
+
+
+#  1.2 第二步  在 xshell终端执行: 复制 黏贴 到 窗口 ，等待执行 完成  输入 回车 确保最后一句也执行
+
+slog2info > slog2infologs
+cp /var/la_gvm.txt ./
+cp -R /var/log/analyzer/ramdumps ./
+top -i 5 -d > top5
+pidin info > pidinInfo
+showmem > showmem
+pidin > pidin
+pidin a > pidina
+pidin thread > pidinThread
+pidin fds > pidinfFds
+pidin memory > pidinMemory
+pidin -f aNo > pidinUnlinkedfds
+pidin pmem > pidinPmem
+cat /dev/thermalmgr > thermalMgr
+cp -r /var/log/analyzer/* ./ramdumps
+echo pmemtbl > /dev/kgsl-control ;
+mv /var/log/pmemtbl.txt ./
+(cat /dev/pmem/screen | awk --non-decimal-data '{sum += $9} END {print sum}' |awk '{printf "%d\n",$0}') > pmemSCREEN
+(cat /dev/pmem/kgsl | awk --non-decimal-data '{sum += $9} END {print sum}' |awk '{printf "%d\n",$0}') > pmemKGSL
+(cat /dev/pmem/audio_service | awk --non-decimal-data '{sum += $9} END {print sum}' |awk '{printf "%d\n",$0}') > pmemAUDIO_SERVICE
+(cat /dev/pmem/videoCore | awk --non-decimal-data '{sum += $9} END {print sum}' |awk '{printf "%d\n",$0}') > pmemVIDEOCORE 
+
+
+
+
+
+
