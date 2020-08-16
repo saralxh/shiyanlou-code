@@ -9,7 +9,7 @@ adb shell rm -rf /data/vstgloballogcontrol/*
 
 # 导出VST log
 
-1.	使用adb pull 导出日志：
+## 1.	使用adb pull 导出日志：
 
 a)	连接adb 线
 
@@ -19,7 +19,7 @@ c)	adb remount
 
 d)	adb pull /data/vstgloballogcontrol “指定目录”
 
-2.	使用ETM功能导出日志：
+## 2.	使用ETM功能导出日志：
 
 a)	将名为vstlogger_enabled的空文件拷贝到U盘根目录下
 
