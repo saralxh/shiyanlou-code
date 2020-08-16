@@ -7,7 +7,7 @@
 3.PC与设备通过串口小板子连接，启动Xshell ①新建会话 选择SERIAL,查看设备管理器端口COM XX
 ②确认端口与Xshell是已连接状态 
 
-![Xshell.png](file:///C:/Users/zhh8023/Desktop/Xshell.png)
+![Xshell.png](https://github.com/saralxh/shiyanlou-code/blob/master/Xshell.png)
 
 # slog2info
 
