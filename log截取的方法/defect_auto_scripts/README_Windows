@@ -1,7 +1,7 @@
 To deploy the qnx and android scripts:
 **************************************
 
-0. Flash the target.
+0. Flash the target. 刷新版本
 
 1. Power on the target and enable adb using the vmf command. 
 
@@ -16,6 +16,8 @@ To deploy the qnx and android scripts:
 	c. adb push QNX_Slogs.sh /ota_download
 
 	d. adb push Android_OP.sh /map
+	
+        F.adb push Monitor.sh /ota_download
 
 	e. adb shell sync 
 
