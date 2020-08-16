@@ -1,4 +1,4 @@
-#开启logcat
+# 开启logcat
 
 C:\Users\zhh8023>adb shell
 
