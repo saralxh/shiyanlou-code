@@ -1,0 +1,117 @@
+To deploy the qnx and android scripts:
+**************************************
+
+0. Flash the target.
+
+1. Power on the target and enable adb using the vmf command. 
+
+2. Reboot the target. 
+
+3. Push the scripts: 
+
+	a. adb root 
+
+	b. adb push QNXScript.sh /ota_download
+
+	c. adb push QNX_Slogs.sh /ota_download
+
+	d. adb push Android_OP.sh /map
+
+	e. adb shell sync 
+
+4. Reboot the target. 
+
+5. Run the scripts:
+
+	a. In QNX terminal:
+	*******************
+
+		i.   mount -t dos /dev/disk/ota_download /var/log 
+
+		ii.  cd /var/log 
+	
+		iii. ksh QNXScript.sh &
+
+		iv.  Confirm that the scripts are running  - 
+			
+			* Check if you are seeing the below prints on qnx terminal - 
+		
+				QNX Data Time (15 mins) - 18_12_20_24
+				cp: Can't open source file.  (/var/log/ana_dumps/smmu_graphics)
+				cp: Can't open source file.  (/var/log/postmortem_smmu_graphics.txt)
+				cp: Can't open source file.  (/var/log/ana_dumps/smmu_display)
+				cp: Can't open source file.  (/var/log/ana_dump/display_smmu_fault_info.txt)
+
+			* On QNX terminal, run - pidin a | grep ksh 
+			  You should see an entry with "ksh QNXScript.sh"
+
+      		    	  Above 2 steps confirms that the QNX Scripts are running. 
+
+	b. In Android terminal:
+	***********************
+
+		0.     adb root  
+		       
+   		       adb shell 
+
+		i.     cd /map 
+
+		ii.    nohup /bin/sh Android_OP.sh &
+
+		iii.   Confirm that the script is running - 
+
+
+			* run the command in adb shell - cat /map/nohup.out
+			  this should the output should include ->  Android Slogs Time
+			  This confirms that the script is running. 
+
+6. Start the stress test. 
+
+How to collect logs?
+********************
+
+1. In the qnx terminal run the command ---->  sync
+
+2. Reboot the target. 
+
+3. Pull logs one by one:
+	
+	0. adb root 
+
+	1. To pull QNX logs:-
+
+		adb pull /ota_download ./ 
+
+	2. To pull Android logs:- 
+
+		adb pull /map ./
+
+	3. To pull the vstlogger 
+
+		adb pull /data/vstgloballogcontrol ./
+
+	4. To pull anrs:
+
+		adb pull /data/anr ./
+
+	5. To pull tombstones:
+
+		adb pull /data/tombstones ./
+
+*******************************************************************************
+* Note: This will take some time (depending on how much time the system ran). * 
+*******************************************************************************
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
