@@ -1,4 +1,4 @@
-# 有线adb
+# 有线adb 通过线连接设备与电脑
 
 Xshell连接后，输入： 
 vmf_sender -g 248 -e 1 -l 5 -f 0000000000 -c 1 & (enable car play  disable adb)
@@ -7,7 +7,7 @@ vmf_sender -g 248 -e 1 -l 5 -f 0000000000 -c 1 & (enable car play  disable adb)
 
 adb devices 返回车机地址，证明已打开有线adb，可通过线连接。
 
-# 无线adb
+# 无线adb 通过IP地址
 
 Xshell输入
 vmf_sender -g 248 -e 1 -l 5 -f 0000000001 -c 1 & (disable car play  enable adb)
