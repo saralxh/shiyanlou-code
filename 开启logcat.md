@@ -20,3 +20,4 @@ touch /data/fatal.key
 
 exit
 
+重启设备
