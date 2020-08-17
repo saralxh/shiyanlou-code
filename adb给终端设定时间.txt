@@ -1,0 +1,7 @@
+# 设定时间
+
+1.adb root
+
+2.adb remount
+
+3.adb shell date "080514542020.00" set

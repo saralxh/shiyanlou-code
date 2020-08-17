@@ -1,0 +1,13 @@
+问题：USB连接车机后，视频中会固定读取system information作为视频文件。
+
+解决办法：cmd中输入：
+
+attrib "H:\System Volume Information" <U盘文件路径>-s   //这句话可以选择，重置系统隐藏文件。
+
+del "H:\System Volume Information"     //del 删除文件夹
+
+rd "H:\System Volume Information"      //rd 删除空文件夹
+
+exit  //退出
+
+
