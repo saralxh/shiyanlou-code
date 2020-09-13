@@ -78,17 +78,18 @@ FlexRay的主要优势在于相比CAN总线具有较高的带宽，可以满足�
 
 * 以太网的常用协议（上图），详细划分如下：
 
- * 1.物理层 BroadR-Reach（OABR）：BroadR-Reach 提供标准以太网的 MAC 层接口；单对非屏蔽双绞线上传输差分信号；为网络提供电流隔离；使一条链路上的两个车载以太网节点能够同时发送和接收数据。
+  * 1.物理层 BroadR-Reach（OABR）：BroadR-Reach 提供标准以太网的 MAC 层接口；单对非屏蔽双绞线上传输差分信号；为网络提供电流隔离；使一条链路上的两个车载以太网节点能够同时发送和接收数据。
 
- * 2 AVB 协议簇 
-  * AVB——以太网音视频桥接技术（Ethernet Audio Video Bridging）：实时音视频的传输协议集；高带宽；成本低；可靠传递数据；技术标准开放；
-  * 1. 802.1AS：精准时间同步协议（Precision Time Protocol，简称PTP）(AVB协议集中最重要的一部分)
-  * 2. 802.1Qat：流预留协议（Stream Reservation Protocol，简称SRP）
-  * 3. 802.1Qav：排队及转发协议（Queuing and Forwarding Protocol，简称Qav）
-  * 4. 802.1BA：音视频桥接系统（Audio Video Bridging Systems
-  * 5. 1722：音视频桥接传输协议（Audio/Video Bridging Transport Protocol，简称AVBTP）
-  * 6. 1733：实时传输协议(Real-Time Transport Protocol，简称RTP)
-  * 7. 1722.1：负责设备搜寻、列举、连接管理、以及基于1722的设备之间的相互控制。包括:
+  * 2 AVB 协议簇 
+  
+    * AVB——以太网音视频桥接技术（Ethernet Audio Video Bridging）：实时音视频的传输协议集；高带宽；成本低；可靠传递数据；技术标准开放；
+    * 1. 802.1AS：精准时间同步协议（Precision Time Protocol，简称PTP）(AVB协议集中最重要的一部分)
+    * 2. 802.1Qat：流预留协议（Stream Reservation Protocol，简称SRP）
+    * 3. 802.1Qav：排队及转发协议（Queuing and Forwarding Protocol，简称Qav）
+    * 4. 802.1BA：音视频桥接系统（Audio Video Bridging Systems
+    * 5. 1722：音视频桥接传输协议（Audio/Video Bridging Transport Protocol，简称AVBTP）
+    * 6. 1733：实时传输协议(Real-Time Transport Protocol，简称RTP)
+    * 7. 1722.1：负责设备搜寻、列举、连接管理、以及基于1722的设备之间的相互控制。包括:
 
 
 
