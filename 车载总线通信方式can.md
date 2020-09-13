@@ -72,7 +72,8 @@ FlexRay的主要优势在于相比CAN总线具有较高的带宽，可以满足�
 ![2.汽车内总线系统示例](https://img2018.cnblogs.com/blog/1561911/201901/1561911-20190131223600556-1978170550.png)
 
 
-
+* （汽车以太网常用协议）
+![汽车以太网常用协议](https://img-blog.csdnimg.cn/202005121543322.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ3MzM0MDgw,size_16,color_FFFFFF,t_70)
 
 
 
